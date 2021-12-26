@@ -1,0 +1,28 @@
+<header class="header-section clearfix mb-12">
+    <a href="index.html" class="site-logo">
+        <img src="../../../../../assets/main pages/img/logo.png" alt="">
+    </a>
+    <div class="header-right">
+        <a href="#" class="hr-btn">Help</a>
+        <span>|</span>
+        <div class="user-panel">
+            <a [routerLink]="['/login']"  class="login">Login</a>
+            <a [routerLink]="['/register']" class="register">Create an account</a>
+        </div> 
+    </div>
+    <ul class="main-menu">
+        <li><a [routerLink]="['/']">Home</a></li>
+        <li><a [routerLink]="['/about']">About</a></li>
+        <li><a href="/">Pages</a>
+            <ul class="sub-menu">
+                <li><a [routerLink]="['/category']">Category</a></li>
+                <li><a [routerLink]="['/playlist']">Playlist</a></li>
+                <li><a [routerLink]="['/artist']">Artist</a></li>
+                <li><a [routerLink]="['/blog']">Blog</a></li>
+                <li><a [routerLink]="['/contact']">Contact</a></li>
+            </ul>
+        </li>
+        <li><a [routerLink]="['/blog']">News</a></li>
+        <li><a [routerLink]="['/contact']">Contact</a></li>
+    </ul>
+</header>

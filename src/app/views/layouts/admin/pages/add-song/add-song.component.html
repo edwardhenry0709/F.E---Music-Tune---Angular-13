@@ -1,0 +1,87 @@
+<div class="d-flex flex-column-fluid">
+    <!--begin::Container-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!--begin::Card-->
+                <div class="card card-custom gutter-b example example-compact">
+                    <div class="card-header">
+                        <h3 class="card-title">Add new song</h3>
+                        <div class="card-toolbar">
+                            <div class="example-tools justify-content-center">
+                                <span class="example-toggle" data-toggle="tooltip" title="" data-original-title="View code"></span>
+                                <span class="example-copy" data-toggle="tooltip" title="" data-original-title="Copy code"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--begin::Form-->
+                    <form class="form" [formGroup]="createSongForms" (ngSubmit)="addSong()">
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <div class="col-lg-6">
+                                    <label>Music Name:</label>
+                                    <input formControlName="txtMusicName" [class]="isValid('txtMusicName')" type="text" class="form-control" placeholder="We don't talk anymore">
+                                    <span class="form-text text-muted">Please fill in music name</span>
+                                    <app-error-message [control]="createSongForms.get('txtMusicName')" [controlName]="'Music Name'"></app-error-message>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Photo:</label>
+                                    <input formControlName="txtPhoto" [class]="isValid('txtPhoto')" type="text" class="form-control" placeholder="httpss://example.com/we-dont-talk-anymore.png">
+                                    <span class="form-text text-muted">Please enter image has https:// and .png/jpg/jpeg</span>
+                                    <app-error-message [control]="createSongForms.get('txtPhoto')" [controlName]="'Photo'"></app-error-message>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-6">
+                                    <label>URL:</label>
+                                    <div class="input-group">
+                                        <input formControlName="txtURL" [class]="isValid('txtURL')" type="text" class="form-control" placeholder="httpss://example.com/we-dont-talk-anymore.mp3">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                <i class="la la-map-marker"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <app-error-message [control]="createSongForms.get('txtURL')" [controlName]="'URL'"></app-error-message>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Artist:</label>
+                                    <div class="input-group">
+                                        <select [class]="isValid('slArtist')" formControlName="slArtist" name="" id="" class="form-control">
+                                            <option *ngFor="let item of artistArray" [value]="item._id">{{item.artist_name}}</option>
+                                        </select>
+                                       
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                <i class="la la-language"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <span class="form-text text-muted">Wee need to sure have only characters in alphabet</span>
+                                    <app-error-message [control]="createSongForms.get('slArtist')" [controlName]="'Artist'"></app-error-message>
+                                </div>
+                            </div>
+                            
+                            <!-- begin: Example Code-->
+                            
+                            <!-- end: Example Code-->
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button type="submit" [disabled]="createSongForms.invalid" class="btn btn-primary mr-2">Save</button>
+                                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </form>
+                    <!--end::Form-->
+                </div>
+                <!--end::Card-->
+               
+            </div>
+        </div>
+    </div>
+    <!--end::Container-->
+</div>

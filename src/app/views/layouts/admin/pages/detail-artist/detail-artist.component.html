@@ -1,0 +1,68 @@
+<div class="d-flex flex-column-fluid">
+    <!--begin::Container-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!--begin::Card-->
+                <div class="card card-custom gutter-b example example-compact">
+                    <div class="card-header">
+                        <h3 class="card-title">Details information artist or Update</h3>
+                        <div class="card-toolbar">
+                            <div class="example-tools justify-content-center">
+                                <span class="example-toggle" data-toggle="tooltip" title="" data-original-title="View code"></span>
+                                <span class="example-copy" data-toggle="tooltip" title="" data-original-title="Copy code"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--begin::Form-->
+                    <form class="form" [formGroup]="detailsArtistForms" (ngSubmit)="updateArtist()">
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <div class="col-lg-6">
+                                    <label>Artist Name:</label>
+                                    <input formControlName="txtArtistName" [class]="isValid('txtArtistName')" type="text" class="form-control" placeholder="Vincenzo Cassano">
+                                    <span class="form-text text-muted">Please fill in artist name</span>
+                                    <app-error-message [control]="detailsArtistForms.get('txtArtistName')" [controlName]="'Artist Name'"></app-error-message>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Active Date:</label>
+                                    <input formControlName="txtActiveDate" [class]="isValid('txtActiveDate')" type="text" class="form-control" placeholder="dd/mm/yy or yyyy like 2019">
+                                    <span class="form-text text-muted">Please enter the Active Date of Artist</span>
+                                    <app-error-message [control]="detailsArtistForms.get('txtActiveDate')" [controlName]="'Active date'"></app-error-message>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-12">
+                                    <label>Biology:</label>
+                                    <div class="input-group">
+                                        <textarea formControlName="txtBio" [class]="isValid('txtBio')" type="text" class="form-control" placeholder="abcxyz"></textarea>
+                                        
+                                    </div>
+                                    <app-error-message [control]="detailsArtistForms.get('txtBio')" [controlName]="'Biology of Artist'"></app-error-message>
+                                </div>
+                                
+                            </div>
+                            
+                            <!-- begin: Example Code-->
+                            
+                            <!-- end: Example Code-->
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button type="submit" [disabled]="detailsArtistForms.invalid" class="btn btn-primary mr-2">Save</button>
+                                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </form>
+                    <!--end::Form-->
+                </div>
+                <!--end::Card-->
+               
+            </div>
+        </div>
+    </div>
+    <!--end::Container-->
+</div>
